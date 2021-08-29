@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plot</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.33.1/plotly-basic.min.js"></script>
+</head>
+
+<body>
+    <div id="tester" style="width:100%;height:100%;"></div>
+
+    <script>
+        var x_axis = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        ];
+
+        var trace1 = {
+            x: x_axis,
+            y: [
+                1.024423, 1.804452, 2.562682, 4.281770, 3.044055, 3.721787, 4.161798, 4.858617, 2.639906, 2.200895, 2.309802, 2.251599, 2.827546, 2.656876, 3.397534, 2.489104, 2.632571, 3.077749, 2.842002, 3.117722,
+            ],
+            mode: 'lines',
+            name: 'Speedup'
+        };
+
+
+        var data = [trace1];
+        var layout = {
+            title: 'No. of Threads vs Speedup',
+            xaxis: {
+                title: 'No. of Threads',
+                showline: false,
+                showgrid: true
+            },
+            yaxis: {
+                title: 'Speedup',
+                showline: false
+            }
+        };
+        // Plotly.newPlot('myDiv', data);
+        TESTER = document.getElementById('tester');
+        Plotly.newPlot(TESTER, data, layout);
+    </script>
+</body>
+
+</html>
